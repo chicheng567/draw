@@ -18,4 +18,5 @@ from django.urls import path
 from drawing import views
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('homepage/', views.home, name='home')
 ]

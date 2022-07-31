@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hoome Page</title>
+        <link rel="stylesheet" href="../static/css/home.css">
+        <script src="../static/plugin/jquery-3.6.0.min.js"></script>
+        <script src="{% static 'js/home.js'%}"></script>
+        
+    </head>
+    <body>
+        Hello world!!
+        <button id ='test'>click me</button>
+        <p>{{ test }}</p>
+        <p>today is :{{ date }}</p>
+
+        {% if  Bool > 0%}
+        <P>success</P>
+        {%else%}
+        <p>fail</p>
+        {% endif %}
+    </body>
+</html>
