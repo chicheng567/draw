@@ -1,3 +1,52 @@
-p{
-    color: rebeccapurple;
+p {
+    color: #ffffff;
+}
+
+body {
+    margin: 0;
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: bolder;
+    margin-top: -50px;
+    background-color: #F9EDED;
+}
+
+#yello_back {
+    position: relative;
+    bottom: 100px;
+    border-color: #F7F066;
+    background-color: #F7F066;
+    width: 1520px;
+    height: 500;
+}
+
+#wave path {
+    bottom: 500px;
+    fill: #F7F066;
+}
+
+.content {
+    position: relative;
+    bottom: 50px;
+    width: 200px;
+    height: 200px;
+    margin: 5.5%;
+    background-color: #ffffff;
+    color: #0000;
+    font-size: 25px;
+    display: inline-block;
+    text-align: center;
+    line-height: 500px;
+    flex-wrap: wrap;
+    border-radius: 0.5rem;
+    clear: both;
+}
+
+a {
+    text-decoration: none;
+}
+
+div:hover {
+    color: lightcoral;
+    border: solid lightcoral 4px;
+    background-color: #ffffff;
 }
