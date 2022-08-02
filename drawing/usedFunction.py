@@ -1,8 +1,10 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 import openpyxl
+from requests import delete
 from .models import *
 from django.db import connection
+import random
 county = {('臺北市', '新北市', '基隆市', '新竹市', '桃園市', '新竹縣', '宜蘭縣', '台北市') : 'N',
 ('臺中市', '苗栗縣', '彰化縣', '南投縣', '雲林縣') : 'C',
 ('高雄市', '臺南市', '嘉義市', '嘉義縣', '屏東縣', '澎湖縣'): 'S',}
@@ -43,3 +45,16 @@ def handle_new_student(fileName):
                 new_student.save()
                 
         iter += 1
+
+def import_tree(fileName):
+    wb = openpyxl.load_workbook('uploadFile/' + fileName)
+    sheet = wb.active
+    randId = 'U' + str(int(random.random() * 10 ** 9))
+    Family.objects.all().delete()
+    iter = 0
+    for row in sheet:
+        if iter > 0:
+            for name in row:
+                if name.value != None:
+                    break
+    return

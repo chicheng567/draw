@@ -1,4 +1,4 @@
-from re import L
+from multiprocessing import connection
 from django.shortcuts import render
 from django.http import JsonResponse
 from . import usedFunction
@@ -21,4 +21,14 @@ def upload_file(request):
         content['have_uploaded'] = 1
     return render(request, 'upload_file.html', content)
 
+def show_tree(request):
+    content = {}
+    return render(request, 'show_tree.html', content)
 
+def upload_tree(request):
+    if request.method == 'POST':
+        file = request.FILES['data']
+        usedFunction.handle_upload_file(file)
+        
+        return render(request, 'upload_tree.html')
+    
